@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Calendar</title>
+<style> #loading-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: black;
+  z-index: 9999;
+}
+
+.progress-bar {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 0%;
+  height: 10px;
+  background-color: white;
+  animation: progress 2s ease-in-out infinite;
+}
+
+@keyframes progress {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+</style>
+</head>
+
+<body>
+  <div id="loading-bar">
+    <div class="progress-bar"></div>
+  </div>
+
+  <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=2&bgcolor=%23ffffff&ctz=Europe%2FLondon&showTabs=1&showNav=1&showTitle=0&showTz=1&showCalendars=0&mode=AGENDA&title=AlphaChess%20Events&src=cm9jay55dS5sb25kb25AZ21haWwuY29t&color=%23F4511E" style="border:solid 1px #777" width="1600" height="1200" frameborder="0" scrolling="no"></iframe>
+
+  <script>
+    // Hide the loading bar after 5 seconds
+    setTimeout(function() {
+      document.getElementById("loading-bar").style.display = "none";
+    }, 5000);
+  </script>
+</body>
+
+</html>
